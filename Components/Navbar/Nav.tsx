@@ -21,7 +21,7 @@ export default function Nav() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Buy Card Packs", href: "/buy" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "FAQ", href: "/faq" },

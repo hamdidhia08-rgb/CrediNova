@@ -66,7 +66,7 @@ export default function About() {
           </ul>
 
           <Link
-            href="#"
+            href="/about"
             className="inline-block w-40 py-3 text-center bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white rounded-md font-medium shadow-md transition mx-auto lg:mx-0"
           >
             Explore More

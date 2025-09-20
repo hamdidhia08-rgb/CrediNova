@@ -2,59 +2,69 @@
 
 import Link from "next/link";
 
-export default function Pricing() {
-  const plans = [
-    {
-      name: "Starter Pack",
-      price: "$250",
-      cards: "30K Credit Cards",
-      description:
-        "Perfect for individuals who want to start small and test the waters.",
-      features: [
-        "30,000 verified cards",
-        "Instant secure delivery",
-        "Basic customer support",
-      ],
-      cta: "Get Starter",
-      highlight: false,
-    },
-    {
-      name: "Pro Pack",
-      price: "$499",
-      cards: "120K Credit Cards",
-      description:
-        "Best choice for professionals who need reliable, verified packs.",
-      features: [
-        "120,000 verified cards",
-        "Priority secure delivery",
-        "24/7 customer support",
-        "Daily updates included",
-      ],
-      cta: "Get Pro",
-      highlight: true,
-    },
-    {
-      name: "Enterprise Pack",
-      price: "$999",
-      cards: "300K Credit Cards",
-      description:
-        "For agencies or large-scale needs, with premium reliability.",
-      features: [
-        "300,000 verified cards",
-        "Premium secure delivery",
-        "Dedicated account manager",
-        "Extended data protection",
-      ],
-      cta: "Get Enterprise",
-      highlight: false,
-    },
-  ];
+type PackKey = "starter-pack" | "pro-pack" | "enterprise-pack";
 
+interface Pack {
+  name: string;
+  price: string;
+  cards: string;
+  description: string;
+  features: string[];
+  cta: string;
+  highlight: boolean;
+  slug: PackKey;
+}
+
+const plans: Pack[] = [
+  {
+    name: "Starter Pack",
+    price: "$250",
+    cards: "30K Credit Cards",
+    description: "Perfect for individuals who want to start small and test the waters.",
+    features: [
+      "30,000 verified cards",
+      "Instant secure delivery",
+      "Basic customer support",
+    ],
+    cta: "Get Starter",
+    highlight: false,
+    slug: "starter-pack",
+  },
+  {
+    name: "Pro Pack",
+    price: "$499",
+    cards: "120K Credit Cards",
+    description: "Best choice for professionals who need reliable, verified packs.",
+    features: [
+      "120,000 verified cards",
+      "Priority secure delivery",
+      "24/7 customer support",
+      "Daily updates included",
+    ],
+    cta: "Get Pro",
+    highlight: true,
+    slug: "pro-pack",
+  },
+  {
+    name: "Enterprise Pack",
+    price: "$999",
+    cards: "300K Credit Cards",
+    description: "For agencies or large-scale needs, with premium reliability.",
+    features: [
+      "300,000 verified cards",
+      "Premium secure delivery",
+      "Dedicated account manager",
+      "Extended data protection",
+    ],
+    cta: "Get Enterprise",
+    highlight: false,
+    slug: "enterprise-pack",
+  },
+];
+
+export default function Pricing() {
   return (
-    <section
-      id="pricing"
-      className="relative bg-gray-950 text-white py-24 px-6 lg:px-20"
-    >
+    <section className="relative bg-gray-950 text-white py-24 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
           Choose Your <span className="text-blue-500">Pack</span>
@@ -65,7 +75,6 @@ export default function Pricing() {
         </p>
       </div>
 
-      {/* Cartes Pricing */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {plans.map((plan) => (
           <div
@@ -100,7 +109,7 @@ export default function Pricing() {
             </ul>
 
             <Link
-              href="#"
+              href={`/buy/${plan.slug}`}
               className={`mt-auto inline-block w-full py-3 text-center rounded-md font-medium shadow-md transition ${
                 plan.highlight
                   ? "bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white"
