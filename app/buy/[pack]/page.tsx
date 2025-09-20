@@ -3,7 +3,7 @@
 import PackDetail from "@/Components/Pricing/PagePackDetail";
 import { useParams } from "next/navigation";
 
-type PackKey = "starter-pack" | "pro-pack" | "enterprise-pack";
+type PackKey = "silver-pack" | "platinum-pack" | "gold-pack";
 
 interface PackData {
   name: string;
@@ -15,8 +15,8 @@ interface PackData {
 }
 
 const allPacks: Record<PackKey, PackData> = {
-  "starter-pack": {
-    name: "Starter Pack",
+  "silver-pack": {
+    name: "Silver Pack",
     price: "$250",
     cards: "30K Credit Cards",
     description: "Perfect for individuals who want to start small and test the waters.",
@@ -27,8 +27,8 @@ const allPacks: Record<PackKey, PackData> = {
     ],
     imageUrl: "/images/choose-card.png",
   },
-  "pro-pack": {
-    name: "Pro Pack",
+  "platinum-pack": {
+    name: "Platinum Pack",
     price: "$499",
     cards: "120K Credit Cards",
     description: "Best choice for professionals who need reliable, verified packs.",
@@ -40,16 +40,17 @@ const allPacks: Record<PackKey, PackData> = {
     ],
     imageUrl: "/images/choose-card.png",
   },
-  "enterprise-pack": {
-    name: "Enterprise Pack",
+  "gold-pack": {
+    name: "Gold Pack",
     price: "$999",
     cards: "300K Credit Cards",
-    description: "For agencies or large-scale needs, with premium reliability.",
+    description: "Exclusive premium pack with maximum reliability and golden support.",
     features: [
       "300,000 verified cards",
-      "Premium secure delivery",
+      "VIP secure delivery",
       "Dedicated account manager",
-      "Extended data protection",
+      "Extended golden protection",
+      "Exclusive priority updates",
     ],
     imageUrl: "/images/choose-card.png",
   },
