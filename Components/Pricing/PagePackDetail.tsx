@@ -44,7 +44,7 @@ export default function PackDetail({
                 {price} <span className="text-lg font-medium text-gray-300">/pack</span>
               </div>
               <Link
-                href="/buy"
+                href="/payment"
                 className="inline-block px-10 py-4 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white rounded-xl font-semibold shadow-xl transition-transform transform hover:scale-105"
               >
                 Buy Now
