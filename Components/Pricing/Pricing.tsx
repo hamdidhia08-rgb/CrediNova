@@ -6,7 +6,7 @@ export default function Pricing() {
   const plans = [
     {
       name: "Starter Pack",
-      price: "$150",
+      price: "$250",
       cards: "30K Credit Cards",
       description:
         "Perfect for individuals who want to start small and test the waters.",
@@ -20,7 +20,7 @@ export default function Pricing() {
     },
     {
       name: "Pro Pack",
-      price: "$299",
+      price: "$499",
       cards: "120K Credit Cards",
       description:
         "Best choice for professionals who need reliable, verified packs.",
@@ -35,7 +35,7 @@ export default function Pricing() {
     },
     {
       name: "Enterprise Pack",
-      price: "$500",
+      price: "$999",
       cards: "300K Credit Cards",
       description:
         "For agencies or large-scale needs, with premium reliability.",
