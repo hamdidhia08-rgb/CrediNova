@@ -38,7 +38,7 @@ const paymentMethods: PaymentMethod[] = [
   },
   {
     name: "MasterCard",
-    imageUrl: "/images/MasterCard_logo.svg.png",
+    imageUrl: "/images/MasterCard_Logo.svg.png",
     description: "Pay easily using your MasterCard credit or debit card.",
     link: "/payment/mastercard",
   },
