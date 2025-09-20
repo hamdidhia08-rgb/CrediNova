@@ -63,7 +63,7 @@ export default function Nav() {
         </nav>
 
         <Link
-          href="/account"
+          href="/login"
           className="hidden md:inline-block px-4 py-2 border border-gray-300 rounded-full text-gray-200 hover:bg-blue-500 hover:border-blue-500 transition-colors duration-200 font-medium"
         >
           My Account
@@ -101,7 +101,7 @@ export default function Nav() {
             })}
             <li>
               <Link
-                href="/account"
+                href="/login"
                 className="block py-2 px-4 mt-2 border border-gray-300 rounded-full text-center text-gray-200 hover:bg-blue-500 hover:border-blue-500 transition-colors duration-200 font-medium"
               >
                 My Account

@@ -48,7 +48,7 @@ export default function PaymentPage() {
   return (
     <>
       <Nav /><br /><br />
-      <main className="bg-gray-900 min-h-screen text-white">
+      <main className="bg-gray-950  min-h-screen text-white">
         {/* Header */}
         <section className="py-24 px-6 lg:px-20 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
