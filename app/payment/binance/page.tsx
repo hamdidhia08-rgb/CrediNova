@@ -146,42 +146,44 @@ export default function BinanceStepper() {
             {step === 3 && (
               <div className="space-y-4 sm:space-y-6 text-center px-2 sm:px-0">
                 <h2 className="text-xl sm:text-2xl font-bold text-blue-500">Step 3: Create Your Account</h2>
-                <form className="space-y-3 sm:space-y-4 text-left px-2 sm:px-0">
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    className="w-full p-2 sm:p-3 rounded-md bg-gray-800 text-white text-sm sm:text-base"
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    className="w-full p-2 sm:p-3 rounded-md bg-gray-800 text-white text-sm sm:text-base"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="w-full p-2 sm:p-3 rounded-md bg-gray-800 text-white text-sm sm:text-base"
-                    required
-                  />
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className="w-full p-2 sm:p-3 rounded-md bg-gray-800 text-white text-sm sm:text-base"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="w-full p-2 sm:p-3 rounded-md bg-gray-800 text-white text-sm sm:text-base"
-                    required
-                  />
+        <form className="space-y-3 sm:space-y-4 text-left px-2 sm:px-0">
+  <input
+    type="text"
+    name="firstName"
+    placeholder="First Name"
+    className="w-full p-2 sm:p-3 rounded-md bg-gray-700 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+    required
+  />
+  <input
+    type="text"
+    name="lastName"
+    placeholder="Last Name"
+    className="w-full p-2 sm:p-3 rounded-md bg-gray-700 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    className="w-full p-2 sm:p-3 rounded-md bg-gray-700 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+    required
+  />
+  <input
+    type="password"
+    name="password"
+    placeholder="Password"
+    className="w-full p-2 sm:p-3 rounded-md bg-gray-700 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+    required
+  />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    className="w-full p-2 sm:p-3 rounded-md bg-gray-700 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+    required
+  />
+
+
                   <div className="flex flex-col sm:flex-row justify-between mt-2 sm:mt-4 gap-2 sm:gap-0">
                     <button
                       type="button"
