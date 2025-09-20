@@ -48,7 +48,7 @@ export default function Hero() {
           </p>
 
           <Link
-            href="/"
+            href="/buy"
             className="inline-block px-10 py-3 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white transition duration-300 rounded-md font-medium text-lg shadow-md"
           >
             Shop Now
