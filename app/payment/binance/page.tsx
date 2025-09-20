@@ -64,42 +64,42 @@ export default function BinanceStepper() {
           </div>
 
           {/* Step Content */}
-          <div className="bg-gray-900 w-full p-4 sm:p-10 rounded-none sm:rounded-2xl shadow-2xl transition-transform transform hover:scale-105">
-            {/* Step 1 */}
-            {step === 1 && (
-              <div className="space-y-4 sm:space-y-6 text-center px-0 sm:px-0">
-                <h2 className="text-xl sm:text-2xl font-bold text-blue-500">
-                  Step 1: Copy Your ID & Send Amount
-                </h2>
-                <p className="text-gray-300 text-sm sm:text-base">
-                  Copy your unique Binance ID below and send the payment amount using Binance Pay.
-                </p>
-                <div className="flex justify-center mb-2 sm:mb-4">
-                  <Image
-                    src="/images/Binance_logo.svg.png"
-                    alt="Binance Logo"
-                    width={120}
-                    height={40}
-                    className="sm:w-[150px] sm:h-[50px]"
-                  />
-                </div>
-                <div className="flex items-center justify-center gap-2 sm:gap-4 bg-gray-800 p-2 sm:p-4 rounded-md font-mono text-base sm:text-lg">
-                  <span>BINANCE-ID-123456</span>
-                  <button
-                    onClick={copyID}
-                    className="bg-blue-500 hover:bg-blue-400 p-1 sm:p-2 rounded-md"
-                  >
-                    <ClipboardIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  </button>
-                </div>
-                <button
-                  onClick={() => setStep(2)}
-                  className="mt-4 sm:mt-6 px-4 sm:px-8 py-2 sm:py-3 bg-blue-500 hover:bg-blue-400 rounded-md font-bold shadow-md w-full sm:w-auto"
-                >
-                  Next Step
-                </button>
-              </div>
-            )}
+<div className="bg-gray-800 w-full p-4 sm:p-10 rounded-none sm:rounded-3xl shadow-2xl transition-transform transform hover:scale-105">
+  {/* Step 1 */}
+  {step === 1 && (
+    <div className="space-y-4 sm:space-y-6 text-center px-0 sm:px-0">
+      <h2 className="text-xl sm:text-2xl font-bold text-blue-500">
+        Step 1: Copy Your ID & Send Amount
+      </h2>
+      <p className="text-gray-300 text-sm sm:text-base">
+        Copy your unique Binance ID below and send the payment amount using Binance Pay.
+      </p>
+      <div className="flex justify-center mb-2 sm:mb-4">
+        <Image
+          src="/images/Binance_logo.svg.png"
+          alt="Binance Logo"
+          width={120}
+          height={40}
+          className="sm:w-[150px] sm:h-[50px]"
+        />
+      </div>
+      <div className="flex items-center justify-center gap-2 sm:gap-4 bg-gray-700 p-2 sm:p-4 rounded-md font-mono text-base sm:text-lg shadow-inner">
+        <span>BINANCE-ID-123456</span>
+        <button
+          onClick={copyID}
+          className="bg-blue-500 hover:bg-blue-400 p-1 sm:p-2 rounded-md shadow-lg"
+        >
+          <ClipboardIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        </button>
+      </div>
+      <button
+        onClick={() => setStep(2)}
+        className="mt-4 sm:mt-6 px-4 sm:px-8 py-2 sm:py-3 bg-blue-500 hover:bg-blue-400 rounded-xl font-bold shadow-lg w-full sm:w-auto"
+      >
+        Next Step
+      </button>
+    </div>
+  )}
 
             {/* Step 2 */}
             {step === 2 && (
