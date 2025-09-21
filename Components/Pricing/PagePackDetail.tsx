@@ -52,47 +52,18 @@ export default function PackDetail({
             </div>
 
             {/* Carte Bancaire */}
-            <div className="flex-1 flex justify-center items-center">
-              <div
-                className="w-80 sm:w-96 h-56 sm:h-64 rounded-3xl p-6 shadow-2xl flex flex-col justify-between relative transition-transform transform hover:rotate-1 hover:-translate-y-2 hover:scale-105"
-                style={{
-                  background: "url('/images/bg.png') center/cover no-repeat",
-                  backgroundColor: "#000000",
-                  color: "#fff",
-                }}
-              >
-                {/* Puce */}
-                <img
-                  src="/images/chip.png"
-                  alt="Puce bancaire"
-                  className="w-12 h-auto"
-                />
-                {/* Numéro */}
-                <div className="text-xl sm:text-2xl tracking-widest mt-2">
-                  XXXX XXXX XXXX X678
-                </div>
-                {/* Détails */}
-                <div className="flex justify-between mt-4 text-sm sm:text-base">
-                  <div>
-                    <div className="text-gray-400 uppercase text-xs">Titulaire</div>
-                    <div className="font-medium">xxx xxx</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-400 uppercase text-xs">Expire</div>
-                    <div className="font-medium">08/27</div>
-                  </div>
-                </div>
-                {/* Footer */}
-                <div className="flex justify-between items-center mt-4">
-                  <div className="font-semibold text-white">Banque Pro</div>
-                  <img
-                    src="/images/logo.png"
-                    alt="Logo MasterCard"
-                    className="h-10 object-contain"
-                  />
-                </div>
-              </div>
-            </div>
+{/* Cartes Bancaires en pile */}
+<div className="flex-1 flex justify-center items-center flex-col relative">
+  {/* Carte du haut */}
+  <img
+    src="/images/download.png"
+    alt="Carte bancaire avant"
+    className="w-90 sm:w-106 h-auto rounded-3xl shadow-2xl relative z-20"
+  />
+</div>
+
+
+
           </div>
         </section>
 
