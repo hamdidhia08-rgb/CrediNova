@@ -5,11 +5,13 @@ import { ClipboardIcon, ArrowUpOnSquareIcon } from "@heroicons/react/20/solid";
 import Nav from "@/Components/Navbar/Nav";
 import Footer from "@/Components/Footer/Footer";
 import Image from "next/image";
+import axios from "axios";
+import { useRouter } from "next/navigation"; 
 
 export default function BinanceStepper() {
   const [step, setStep] = useState(1);
   const [file, setFile] = useState<File | null>(null);
-
+const router = useRouter();
   const copyID = () => {
     navigator.clipboard.writeText("BINANCE-ID-123456");
     alert("ID copied to clipboard!");
@@ -26,6 +28,39 @@ export default function BinanceStepper() {
     }
     setStep(step + 1);
   };
+
+
+// à l'intérieur du composant
+const [loading, setLoading] = useState(false);
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setLoading(true);
+
+  const formData = new FormData(e.currentTarget);
+  const data = {
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+    phone: formData.get("phone"),
+  };
+
+  try {
+    const res = await axios.post("/api/users", data);
+    if (res.data.success) {
+      // Remplacer alert + reload par setStep(4)
+      setStep(4);
+    } else {
+      alert("❌ Error: " + res.data.error);
+    }
+  } catch (err) {
+    alert("❌ Something went wrong.");
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <>
@@ -86,16 +121,17 @@ export default function BinanceStepper() {
       />
     </div>
 
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-gray-700 p-3 sm:p-4 rounded-md font-mono text-base sm:text-lg shadow-inner">
-      <span className="text-white font-bold">BINANCE-ID-123456</span>
-      <button
-        onClick={copyID}
-        className="bg-blue-500 hover:bg-blue-400 p-2 sm:p-2 rounded-md shadow-lg flex items-center gap-1"
-      >
-        <ClipboardIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-        <span className="hidden sm:inline text-sm">Copy</span>
-      </button>
-    </div>
+<div className="flex flex-row items-center justify-center gap-2 bg-gray-700 p-3 sm:p-4 rounded-md font-mono text-base sm:text-lg shadow-inner">
+  <span className="text-white font-bold">BINANCE-ID-123456</span>
+  <button
+    onClick={copyID}
+    className="bg-blue-500 hover:bg-blue-400 p-2 sm:p-2 rounded-md shadow-lg flex items-center gap-1"
+  >
+    <ClipboardIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    <span className="text-sm">Copy</span>
+  </button>
+</div>
+
 
     <p className="text-gray-400 text-xs sm:text-sm">
       ⚠️ Only send payments to this Binance ID. Any transfer to a different ID will not be accepted.
@@ -175,7 +211,7 @@ export default function BinanceStepper() {
             {step === 3 && (
               <div className="space-y-4 sm:space-y-6 text-center px-2 sm:px-0">
                 <h2 className="text-xl sm:text-2xl font-bold text-blue-500">Step 3: Create Your Account</h2>
-        <form className="space-y-3 sm:space-y-4 text-left px-2 sm:px-0">
+        <form className="space-y-3 sm:space-y-4 text-left px-2 sm:px-0" onSubmit={handleSubmit}>
   <input
     type="text"
     name="firstName"
@@ -213,41 +249,51 @@ export default function BinanceStepper() {
   />
 
 
-                  <div className="flex flex-col sm:flex-row justify-between mt-2 sm:mt-4 gap-2 sm:gap-0">
-                    <button
-                      type="button"
-                      onClick={() => setStep(2)}
-                      className="px-4 py-2 sm:px-6 sm:py-2 bg-gray-700 hover:bg-gray-600 rounded-md font-bold w-full sm:w-auto"
-                    >
-                      Back
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setStep(4)}
-                      className="px-4 py-2 sm:px-6 sm:py-2 bg-blue-500 hover:bg-blue-400 rounded-md font-bold w-full sm:w-auto"
-                    >
-                      Submit
-                    </button>
-                  </div>
+            <div className="flex flex-col sm:flex-row justify-between mt-2 sm:mt-4 gap-2 sm:gap-0">
+                <button
+                type="button"
+                onClick={() => setStep(2)}
+                className="px-4 py-2 sm:px-6 sm:py-2 bg-gray-700 hover:bg-gray-600 rounded-md font-bold w-full sm:w-auto"
+                >
+                Back
+                </button>
+                <button
+                type="submit"
+                className={`px-4 py-2 sm:px-6 sm:py-2 rounded-md font-bold w-full sm:w-auto ${
+                    loading ? "bg-gray-500 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-400"
+                }`}
+                disabled={loading}
+                >
+                {loading ? "Submitting..." : "Submit"}
+                </button>
+            </div>
                 </form>
               </div>
             )}
 
-            {/* Step 4 */}
-            {step === 4 && (
-              <div className="space-y-4 sm:space-y-6 text-center px-2 sm:px-0">
-                <h2 className="text-xl sm:text-2xl font-bold text-green-500">Thank You!</h2>
-                <p className="text-gray-300 text-sm sm:text-base">
-                  Your payment and account creation were successful. You can now access all features.
-                </p>
-                <button
-                  onClick={() => setStep(1)}
-                  className="mt-4 sm:mt-6 px-4 sm:px-8 py-2 sm:py-3 bg-blue-500 hover:bg-blue-400 rounded-md font-bold shadow-md w-full sm:w-auto"
-                >
-                  Return Home
-                </button>
-              </div>
-            )}
+           {/* Step 4 */}
+{step === 4 && (
+  <div className="space-y-4 sm:space-y-6 text-center px-2 sm:px-0">
+    {/* Image de check */}
+    <img
+      src="/images/svtl-transparent.gif"
+      alt="Success"
+      className="mx-auto w-30 h-30 sm:w-30 sm:h-30"
+    />
+
+    <h2 className="text-xl sm:text-2xl font-bold text-green-500">Thank You!</h2>
+    <p className="text-gray-300 text-sm sm:text-base">
+      Your payment and account creation were successful. You can now access all features.
+    </p>
+        <button
+            onClick={() => router.push("/login")} // redirection vers login
+            className="mt-4 sm:mt-6 px-4 sm:px-8 py-2 sm:py-3 bg-blue-500 hover:bg-blue-400 rounded-md font-bold shadow-md w-full sm:w-auto"
+          >
+            Go to Login
+          </button>
+  </div>
+)}
+
           </div>
         </div>
       </main>

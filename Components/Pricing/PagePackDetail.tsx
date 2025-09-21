@@ -28,7 +28,7 @@ export default function PackDetail({
   return (
     <>
       <Nav />
-      <main className="bg-gray-900 text-white min-h-screen">
+      <main className="bg-gray-950 text-white min-h-screen">
         {/* Hero Section */}
         <section className="relative pt-32 pb-24 px-6 lg:px-20 text-center lg:text-left">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
@@ -57,7 +57,7 @@ export default function PackDetail({
                 className="w-80 sm:w-96 h-56 sm:h-64 rounded-3xl p-6 shadow-2xl flex flex-col justify-between relative transition-transform transform hover:rotate-1 hover:-translate-y-2 hover:scale-105"
                 style={{
                   background: "url('/images/bg.png') center/cover no-repeat",
-                  backgroundColor: "#000",
+                  backgroundColor: "#000000",
                   color: "#fff",
                 }}
               >
