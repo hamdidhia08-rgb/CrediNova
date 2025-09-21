@@ -1,11 +1,12 @@
 import MobileBottomBar from '@/Components/Bottombar/Bottombar';
 import Nav from '@/Components/Navbar/Nav';
+import Navadmin from '@/Components/Navbar/Navadmin';
 import React from 'react';
 
 const Page = () => {
     return (
         <div>
-            <Nav/>
+            <Navadmin/>
             hello world 
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
