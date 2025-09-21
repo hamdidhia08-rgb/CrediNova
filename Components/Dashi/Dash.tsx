@@ -4,14 +4,16 @@ import { CreditCardIcon, CurrencyDollarIcon, CubeIcon } from "@heroicons/react/2
 
 export default function Dashi() {
   return (
-    <main className="bg-gray-950 min-h-screen flex flex-col items-center px-4 py-10 pt-28">
+   <main className="bg-gray-950 min-h-screen flex flex-col items-center px-4 py-10 pt-24">
       {/* Titre */}
-      <h1 className="text-3xl sm:text-4xl font-bold text-white mb-10">
-        Welcome to your Dashboard
-      </h1>
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
+            Welcome to your Dashboard
+        </h1>
+
+
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-6xl">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-6xl">
         {/* Solde total */}
         <div className="relative bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden">
           {/* Glow effect */}
@@ -23,7 +25,7 @@ export default function Dashi() {
             </div>
             <div>
               <p className="text-gray-400 text-sm">Total Balance</p>
-              <p className="text-2xl font-bold text-white">$5,000</p>
+              <p className="text-2xl font-bold text-white">$5000,000</p>
             </div>
           </div>
         </div>
@@ -39,7 +41,7 @@ export default function Dashi() {
             </div>
             <div>
               <p className="text-gray-400 text-sm">Credit Cards</p>
-              <p className="text-2xl font-bold text-white">3</p>
+              <p className="text-2xl font-bold text-white">20.000</p>
             </div>
           </div>
         </div>
